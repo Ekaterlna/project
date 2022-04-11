@@ -1,0 +1,120 @@
+body {
+    background-color: rgba(154, 81, 173, 0.336);
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header_form {
+    height: 180px;
+    width: 300px;
+    display: block;
+    position: absolute;
+    font-size: 16px;
+}
+
+.header_form input {
+    font-family: 'Roboto', sans-serif;
+    width: 250px;
+    height: 42px;
+    flex: 1;
+    font-size: 16px;
+    line-height: 36px;
+    padding: 0px 16px;
+    transition: all .3s;
+    margin: 5px
+}
+
+.btn_save {
+    font-family: 'Roboto', sans-serif;
+    height: 42px;
+    width: 250px;
+    flex: 1;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 36px;
+    transition: all .3s;
+    margin: 5px;
+    background-color: rgb(176, 107, 179);
+    box-shadow: none;
+}
+
+.header_btn {
+    display: block;
+    height: 180px;
+    width: 500px;
+    left: 270px;
+    position: absolute;
+    font-size: 16px;
+    top: 27px;
+}
+
+.header_btn button {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(176, 107, 179);
+    width: 250px;
+    height: 42px;
+    flex: 1;
+    font-size: 16px;
+    line-height: 36px;
+    transition: all .3s;
+    margin: 5px;
+}
+
+#strOld {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    top: 2px;
+}
+
+#strYoung {
+    position: relative;
+    top: 2px;
+}
+
+.header_btn_server {
+    position: absolute;
+    height: 180px;
+    width: 300px;
+    left: 800px;
+    top: 27px;
+}
+
+.header_btn_server button {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(176, 107, 179);
+    width: 250px;
+    height: 42px;
+    flex: 1;
+    font-size: 16px;
+    line-height: 36px;
+    transition: all .3s;
+    margin: 5px;
+}
+
+table {
+    width: 515px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    position: absolute;
+    top: 265px;
+    left: 14px;
+}
+
+th {
+    height: 36px;
+    width: 275px;
+    border: 1px solid grey;
+}
+
+td {
+    border: 1px solid grey;
+    height: 36px;
+    width: 275px;
+}
+
+tr {
+    border: 1px solid grey;
+}

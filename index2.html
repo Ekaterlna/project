@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700|Roboto:400,500&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class='header_form' id="modal">
+            <br><input id='name' maxlength="15" type="text" onkeyup='checkParams()' placeholder="Введите имя" name='userName' autocomplete="off" oninput="this.value=this.value.replace(/[^a-zA-Zа-яА-Я]/g,'');" required>
+            <br><input id='years' type="date" min="0001-01-01" max="2021-04-04" onkeyup='checkParams()' placeholder="Введите дату рождения" name='userAge' autocomplete="off" required>
+            <br><button class="btn_save" id='buttSave' onkeyup='checkParams()'>Сохранить</button>
+        </div>
+    </header>
+    <div class="header_btn">
+
+        <button class="btn_old" id='old' disabled>Самый старый</button>
+        <text id='strOld'></text>
+        <button class="btn_young" id='young' disabled>Самый молодой</button>
+        <text id='strYoung'></text>
+        <button id='buttClear' disabled>Очистить таблицу</button>
+    </div>
+    <div class="header_btn_server">
+        <button id='buttPost'>Отправить данные на сервер</button>
+        <button id='buttGet'>Загрузить данные с сервера</button>
+        <button id='buttClearServer'>Удалить данные с сервера</button>
+        <button id='buttUpdateServer'>Обновить данные на сервере</button>
+    </div>
+    </div>
+    <table id='table1'>
+        <tr>
+            <th>Имя</th>
+            <th>Дата рождения</th>
+            <th>Возраст</th>
+        </tr>
+        <!--ряд с ячейками заголовков-->
+        <tr>
+        </tr>
+        <!--ряд с ячейками тела таблицы-->
+    </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
