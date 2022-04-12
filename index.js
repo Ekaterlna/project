@@ -70,12 +70,12 @@ app.post("/send", async function(req, res) {
     //фильтр массива с сайта
     let filterarr = [];
     filterarr = massivUsers.filter((item, index) => {
-        if (typeof massivUsers[index] === 'string') {
-            if (massivUsers.indexOf(item) !== index) {
-                massivUsers.splice(index, 2)
-            }
+        if (typeof massivUsers[index] === 'string' && massivUsers.indexOf(item) !== index) {
+            massivUsers.splice(index, 2)
+            return false;
+        } else {
+            return true
         }
-        return massivUsers.indexOf(item) === index;
     });
 
     //получение массива из базы данных
@@ -93,22 +93,23 @@ app.post("/send", async function(req, res) {
 
     let filterarr2 = [];
     filterarr2 = test2.filter((item, index) => {
-        if (test2.indexOf(item) !== index) {
+        if (typeof test2[index] === 'string' && test2.indexOf(item) !== index) {
             test2.splice(index, 2)
+            return false;
+        } else {
+            return true
         }
-
-        return test2.indexOf(item) === index;
     });
 
     //обрезание массива
     filterarr2.splice(0, length);
 
     //округление возраста
-    // for (let i = 0; i < filterarr2.length; i++) {
-    //     if (typeof filterarr2[i] == 'number') {
-    //         filterarr2[i] = Math.floor(filterarr2[i])
-    //     }
-    // };
+    for (let i = 0; i < filterarr2.length; i++) {
+        if (typeof filterarr2[i] == 'number') {
+            filterarr2[i] = Math.floor(filterarr2[i])
+        }
+    };
 
     //приведение даты к нужному формату и обрезка последней запятой
     for (let i = 0; i < filterarr2.length; i = i + 3) {
@@ -148,12 +149,12 @@ app.post("/update", async function(req, res) {
     //фильтр массива с сайта
     let filterarr = [];
     filterarr = massivUsers.filter((item, index) => {
-        if (typeof massivUsers[index] == 'string') {
-            if (massivUsers.indexOf(item) !== index) {
-                massivUsers.splice(index, 2)
-            }
+        if (typeof massivUsers[index] === 'string' && massivUsers.indexOf(item) !== index) {
+            massivUsers.splice(index, 2)
+            return false;
+        } else {
+            return true
         }
-        return massivUsers.indexOf(item) === index;
     });
 
     //получение массива из базы данных
@@ -173,11 +174,11 @@ app.post("/update", async function(req, res) {
     test2.splice(0, length);
 
     //округление возраста
-    // for (let i = 0; i < test2.length; i++) {
-    //     if (typeof test2[i] == 'number') {
-    //         test2[i] = Math.floor(test2[i])
-    //     }
-    // };
+    for (let i = 0; i < test2.length; i++) {
+        if (typeof test2[i] == 'number') {
+            test2[i] = Math.floor(test2[i])
+        }
+    };
 
     //приведение даты к нужному формату и обрезка последней запятой
     for (let i = 0; i < test2.length; i = i + 3) {
